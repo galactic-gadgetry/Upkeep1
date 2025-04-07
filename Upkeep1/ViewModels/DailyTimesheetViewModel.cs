@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Upkeep1.ViewModels
 {
-    public class LayoutViewModel : ViewModelBase
+    public class DailyTimesheetViewModel : ViewModelBase
     {
-
-        public ViewModelBase? CurrentContentViewModel => new DailyTimesheetViewModel();
     }
 }

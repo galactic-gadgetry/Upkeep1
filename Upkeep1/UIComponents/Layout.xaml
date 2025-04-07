@@ -31,6 +31,9 @@
                 <Grid Grid.Column="1" Grid.Row="0">
                     <ScrollViewer Content="{Binding CurrentContentViewModel}">
                         <ScrollViewer.Resources>
+                            <DataTemplate DataType="{x:Type vm:DailyTimesheetViewModel}">
+                                <view:DailyTimesheetView/>
+                            </DataTemplate>
                             <DataTemplate DataType="{x:Type vm:ProjectsViewModel}">
                                 <view:ProjectsView/>
                             </DataTemplate>
