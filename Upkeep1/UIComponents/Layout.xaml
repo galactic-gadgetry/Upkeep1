@@ -5,6 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Upkeep1.UIComponents"
              xmlns:ui="clr-namespace:Upkeep1.UIComponents"
+             xmlns:view="clr-namespace:Upkeep1.Views"
+             xmlns:vm="clr-namespace:Upkeep1.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -26,9 +28,15 @@
                     Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
                 
                 <!--- #Main Content -->
-                <Label Background="LightGray"
-                    Grid.Column="1" Grid.Row="0"
-                    Content="Main Content placeholder."/>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <ScrollViewer Content="{Binding CurrentContentViewModel}">
+                        <ScrollViewer.Resources>
+                            <DataTemplate DataType="{x:Type vm:ProjectsViewModel}">
+                                <view:ProjectsView/>
+                            </DataTemplate>
+                        </ScrollViewer.Resources>
+                    </ScrollViewer>
+                </Grid>
                 
                 <!-- # Side Content -->
                 <Label Background="Gray"
