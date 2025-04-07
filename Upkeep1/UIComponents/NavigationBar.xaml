@@ -23,8 +23,12 @@
                 <!-- #Navigation Buttons -->
                 <Border Grid.Column="1" Grid.Row="0" Background="Black">
                     <StackPanel>
-                        <btn:NavigationBarButton/>
-                        <btn:NavigationBarButton/>
+                        <btn:NavigationBarButton
+                            ButtonText="Timesheet"
+                            ButtonClickedCommand="{Binding TimesheetButtonClickedCommand}"/>
+                        <btn:NavigationBarButton
+                            ButtonText="Projects"
+                            ButtonClickedCommand="{Binding ProjectsButtonClickedCommand}"/>
                     </StackPanel>
                 </Border>
             </Grid>

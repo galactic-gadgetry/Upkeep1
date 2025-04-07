@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Upkeep1.ViewModels
+namespace Upkeep1.Services
 {
-    public class ProjectsViewModel : DefaultViewModelBase
+    public interface INavigate
     {
+
+        public void Navigate();
     }
 }

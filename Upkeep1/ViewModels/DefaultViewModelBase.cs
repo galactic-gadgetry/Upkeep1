@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Upkeep1.ViewModels
 {
-    public class ProjectsViewModel : DefaultViewModelBase
+    public class DefaultViewModelBase : ViewModelBase
     {
     }
 }

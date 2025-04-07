@@ -10,12 +10,13 @@
     <Grid>
         <Border>
 
-            <Button>
+            <Button
+                Command="{Binding ButtonClickedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
                 <StackPanel Orientation="Horizontal">
                     <Image>
                         
                     </Image>
-                    <TextBlock Text="Placeholder">
+                    <TextBlock Text="{Binding ButtonText, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
                         
                     </TextBlock>
                 </StackPanel>

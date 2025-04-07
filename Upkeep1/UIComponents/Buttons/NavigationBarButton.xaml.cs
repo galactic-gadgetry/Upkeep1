@@ -20,6 +20,42 @@ namespace Upkeep1.UIComponents.Buttons
     /// </summary>
     public partial class NavigationBarButton : UserControl
     {
+        // Dependency Properties
+        public static readonly DependencyProperty ButtonClickedCommandProperty =
+            DependencyProperty.Register(
+                nameof(ButtonClickedCommand),
+                typeof(ICommand),
+                typeof(NavigationBarButton),
+                new PropertyMetadata(null));
+
+        public static readonly DependencyProperty ButtonTextProperty =
+            DependencyProperty.Register(
+                nameof(ButtonText),
+                typeof(string),
+                typeof(NavigationBarButton),
+                new PropertyMetadata(string.Empty));
+
+
+        /// <summary>
+        /// Text for the button text block.
+        /// </summary>
+        public string ButtonText
+        {
+            get => (string)GetValue(ButtonTextProperty);
+            set => SetValue(ButtonTextProperty, value);
+        }
+
+
+        /// <summary>
+        /// Executed when the button is clicked.
+        /// </summary>
+        public ICommand ButtonClickedCommand
+        {
+            get => (ICommand)GetValue(ButtonClickedCommandProperty);
+            set => SetValue(ButtonClickedCommandProperty, value);
+        }
+
+
         public NavigationBarButton()
         {
             InitializeComponent();

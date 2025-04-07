@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Upkeep1.UIComponents"
-             xmlns:ui="clr-namespace:Upkeep1.UIComponents"
              xmlns:view="clr-namespace:Upkeep1.Views"
              xmlns:vm="clr-namespace:Upkeep1.ViewModels"
              mc:Ignorable="d" 
@@ -24,8 +23,13 @@
                 </Grid.RowDefinitions>
                 
                 <!-- #Navigation Bar -->
-                <ui:NavigationBar
-                    Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+                <ContentControl Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Content="{Binding CurrentNavigationBarViewModel}">
+                    <ContentControl.Resources>
+                        <DataTemplate DataType="{x:Type vm:NavigationBarViewModel}">
+                            <local:NavigationBar/>
+                        </DataTemplate>
+                    </ContentControl.Resources>
+                </ContentControl>
                 
                 <!--- #Main Content -->
                 <Grid Grid.Column="1" Grid.Row="0">
@@ -42,11 +46,13 @@
                 </Grid>
                 
                 <!-- # Side Content -->
-                <Label Background="Gray"
-                    Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"
-                    Content="Side Content placeholder."/>
-                
-                <!-- #Info Bar -->
+                <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
+                    <ContentControl Content="{Binding CurrentSideContentViewModel}">
+                        
+                    </ContentControl>
+                </Grid>
+
+                        <!-- #Info Bar -->
                 <Label Background="DarkGray"
                     Grid.Column="1" Grid.Row="1"
                     Content="Info Bar placeholder."/>
