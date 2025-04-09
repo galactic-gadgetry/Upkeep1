@@ -9,7 +9,7 @@
              d:DesignHeight="650">
     
     <Grid>
-        <Border Background="Black">
+        <Border Background="{StaticResource LayerFillColorBrush2}">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -18,17 +18,22 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- #Side Navigation Bar Buttons -->
-                <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="Black"/>
+                <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="{StaticResource LayerFillColorBrush1}"/>
 
                 <!-- #Navigation Buttons -->
-                <Border Grid.Column="1" Grid.Row="0" Background="Black">
-                    <StackPanel>
+                <Border Grid.Column="1" Grid.Row="0" Background="{StaticResource LayerFillColorBrush2}">
+                    <StackPanel Margin="7,55,7,0">
                         <btn:NavigationBarButton
                             ButtonText="Timesheet"
-                            ButtonClickedCommand="{Binding TimesheetButtonClickedCommand}"/>
+                            ButtonClickedCommand="{Binding TimesheetButtonClickedCommand}"
+                            ButtonImageSource="{StaticResource CalendarWhite}"
+                            ButtonImageSourceMouseOver="{StaticResource CalendarWhite}"
+                            ButtonImageSourcePressed="{StaticResource CalendarWhite}"
+                            ButtonImageSourceDisabled="{StaticResource CalendarDisabled}"/>
                         <btn:NavigationBarButton
                             ButtonText="Projects"
                             ButtonClickedCommand="{Binding ProjectsButtonClickedCommand}"/>
+                        <Button Content="Test" IsEnabled="False"/>
                     </StackPanel>
                 </Border>
             </Grid>

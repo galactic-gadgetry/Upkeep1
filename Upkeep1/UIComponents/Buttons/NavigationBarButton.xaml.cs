@@ -20,11 +20,50 @@ namespace Upkeep1.UIComponents.Buttons
     /// </summary>
     public partial class NavigationBarButton : UserControl
     {
+        // Get application's resource dictionary.
+        private static readonly ResourceDictionary res = (ResourceDictionary)Application.LoadComponent(new Uri("/UpkeepUI;component/Controls/Button.xaml",UriKind.Relative));
+        private static readonly Thickness buttonPadding = (Thickness)res["ButtonPadding"];
+
         // Dependency Properties
         public static readonly DependencyProperty ButtonClickedCommandProperty =
             DependencyProperty.Register(
                 nameof(ButtonClickedCommand),
                 typeof(ICommand),
+                typeof(NavigationBarButton),
+                new PropertyMetadata(null));
+
+        public static readonly DependencyProperty ButtonPaddingProperty =
+            DependencyProperty.Register(
+                nameof(ButtonPadding),
+                typeof(Thickness),
+                typeof(NavigationBarButton),
+                new PropertyMetadata(buttonPadding));
+
+        public static readonly DependencyProperty ButtonImageSourceProperty =
+            DependencyProperty.Register(
+                nameof(ButtonImageSource),
+                typeof(ImageSource),
+                typeof(NavigationBarButton),
+                new PropertyMetadata(null));
+
+        public static readonly DependencyProperty ButtonImageSourceDisabledProperty =
+            DependencyProperty.Register(
+                nameof(ButtonImageSourceDisabled),
+                typeof(ImageSource),
+                typeof(NavigationBarButton),
+                new PropertyMetadata(null));
+
+        public static readonly DependencyProperty ButtonImageSourceMouseOverProperty =
+            DependencyProperty.Register(
+                nameof(ButtonImageSourceMouseOver),
+                typeof(ImageSource),
+                typeof(NavigationBarButton),
+                new PropertyMetadata(null));
+
+        public static readonly DependencyProperty ButtonImageSourcePressedProperty =
+            DependencyProperty.Register(
+                nameof(ButtonImageSourcePressed),
+                typeof(ImageSource),
                 typeof(NavigationBarButton),
                 new PropertyMetadata(null));
 
@@ -35,6 +74,51 @@ namespace Upkeep1.UIComponents.Buttons
                 typeof(NavigationBarButton),
                 new PropertyMetadata(string.Empty));
 
+
+        /// <summary>
+        /// Padding for the  button.
+        /// </summary>
+        public Thickness ButtonPadding
+        {
+            get => (Thickness)GetValue(ButtonPaddingProperty);
+            set => SetValue(ButtonPaddingProperty, value);
+        }
+
+        /// <summary>
+        /// Source for the button's image.
+        /// </summary>
+        public ImageSource ButtonImageSource
+        {
+            get => (ImageSource)GetValue(ButtonImageSourceProperty);
+            set => SetValue(ButtonImageSourceProperty, value);
+        }
+
+        /// <summary>
+        /// Source for the button's image when disabled.
+        /// </summary>
+        public ImageSource ButtonImageSourceDisabled
+        {
+            get => (ImageSource)GetValue(ButtonImageSourceDisabledProperty);
+            set => SetValue(ButtonImageSourceDisabledProperty, value);
+        }
+
+        /// <summary>
+        /// Source for the button's image on mouse over.
+        /// </summary>
+        public ImageSource ButtonImageSourceMouseOver
+        {
+            get => (ImageSource)GetValue(ButtonImageSourceMouseOverProperty);
+            set => SetValue(ButtonImageSourceMouseOverProperty, value);
+        }
+
+        /// <summary>
+        /// Source for the button's image when pressed.
+        /// </summary>
+        public ImageSource ButtonImageSourcePressed
+        {
+            get => (ImageSource)GetValue(ButtonImageSourcePressedProperty);
+            set => SetValue(ButtonImageSourcePressedProperty, value);
+        }
 
         /// <summary>
         /// Text for the button text block.

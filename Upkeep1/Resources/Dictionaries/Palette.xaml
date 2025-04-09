@@ -9,4 +9,11 @@
     <Color x:Key="GreenBase">#4d6160</Color>
     <Color x:Key="BlackBase">#292522</Color>
     
+    
+    <!-- #Brushes -->
+    <SolidColorBrush x:Key="LayerFillColorBrush1" Color="{StaticResource BlackBase}"/>
+    <SolidColorBrush x:Key="LayerFillColorBrush2" Color="{StaticResource ApplicationBackgroundColor}"/>
+    
+    <!-- #Buttons -->
+
 </ResourceDictionary>

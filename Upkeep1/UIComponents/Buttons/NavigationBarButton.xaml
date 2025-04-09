@@ -6,22 +6,64 @@
              xmlns:local="clr-namespace:Upkeep1.UIComponents.Buttons"
              mc:Ignorable="d" 
              d:DesignWidth="250">
-    
+
     <Grid>
         <Border>
 
+            <Button>
+                <Button.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource NavigationBarButtonStyle}">
+                        
+                    </Style>
+                </Button.Resources>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource CalendarWhite}" Style="{StaticResource NavigationBarButtonImageStyle}"/>
+                    <TextBlock Text="Placeholder" Style="{StaticResource NavigationBarButtonTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+            <!--
             <Button
                 Command="{Binding ButtonClickedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
                 <StackPanel Orientation="Horizontal">
-                    <Image>
-                        
+                    <Image Stretch="None">
+                        <Image.Resources>
+                            <Style TargetType="Image" BasedOn="{StaticResource NavigationBarButtonImageStyle}">
+                                <Setter Property="Source" Value="{Binding ButtonImageSource, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                                <Style.Triggers>
+            -->
+                                    <!-- #Mouse over, enabled behaviors -->
+            <!--
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsMouseOver}" Value="True"/>
+                                            <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsEnabled}" Value="True"/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Source" Value="{Binding ButtonImageSourceMouseOver, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                                    </MultiDataTrigger>
+            -->
+                                    <!-- #Pressed Behaviors -->
+            <!--
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsPressed}" Value="True">
+                                        <Setter Property="Source" Value="{Binding ButtonImageSourcePressed, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                                    </DataTrigger>
+            -->
+
+                                    <!-- #Disabled behaviors -->
+            <!--
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=IsEnabled}" Value="False">
+                                        <Setter Property="Source" Value="{Binding ButtonImageSourceDisabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Resources>
                     </Image>
                     <TextBlock Text="{Binding ButtonText, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
-                        
+
                     </TextBlock>
                 </StackPanel>
             </Button>
-            
+            -->
         </Border>
     </Grid>
     

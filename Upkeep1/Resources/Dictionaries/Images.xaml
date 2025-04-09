@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <BitmapImage x:Key="CalendarDisabled" UriSource="/Upkeep1;component/Resources/Images/Icons/Calendar/calendar-disabled.png"/>
+    <BitmapImage x:Key="CalendarWhite" UriSource="/Upkeep1;component/Resources/Images/Icons/Calendar/calendar-white.png"/>
+
+</ResourceDictionary>

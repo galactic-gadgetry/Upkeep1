@@ -9,7 +9,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\Images\Icons\Briefcase\briefcase_white\**" />
+    <EmbeddedResource Remove="Resources\Images\Icons\Briefcase\briefcase_white\**" />
+    <None Remove="Resources\Images\Icons\Briefcase\briefcase_white\**" />
+    <Page Remove="Resources\Images\Icons\Briefcase\briefcase_white\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\Icons\Briefcase\briefcase-green-light-15.png" />
+    <None Remove="Resources\Images\Icons\Briefcase\briefcase_white.png" />
+    <None Remove="Resources\Images\Icons\Calendar\calendar-disabled.png" />
+    <None Remove="Resources\Images\Icons\Calendar\calendar-green-light-15.png" />
+    <None Remove="Resources\Images\Icons\Calendar\calendar-green-light-15.svg" />
+    <None Remove="Resources\Images\Icons\Calendar\calendar-white.png" />
+    <None Remove="Resources\Images\Icons\Calendar\calendar-white.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UpkeepUI\UpkeepUI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\Icons\Briefcase\briefcase-green-light-15.png" />
+    <Resource Include="Resources\Images\Icons\Calendar\calendar-disabled.png" />
+    <Resource Include="Resources\Images\Icons\Calendar\calendar-green-light-15.png" />
+    <Resource Include="Resources\Images\Icons\Calendar\calendar-white.png" />
   </ItemGroup>
 
 </Project>
